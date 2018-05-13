@@ -44,5 +44,10 @@ def execute_code():
     return json.dumps({'success': False}), 403, {'ContentType': 'application/json'}
 
 
+@app.route("/retrieveLanguages", methods=['GET'])
+def return_languages():
+    return json.dumps({'languages': supported_langs}), 200, {'ContentType': 'application/json'}
+
+
 if __name__ == '__main__':
     app.run()
